@@ -7,17 +7,29 @@ import grainImage from "@/assets/images/grain.jpg";
 import StarIcon from "@/assets/icons/star.svg";
 import SparkleIcon from "@/assets/icons/sparkle.svg";
 import { HeroOrbit } from "@/components/HeroOrbit";
-import { useCallback } from "react";
+import { useCallback, useState } from "react";
+import { motion, useTime, useTransform } from "framer-motion";
 
 
 export const HeroSection = () => {
 
-  const scrollToProjects = useCallback(() => {
-    const projectsSection = document.getElementById('projects');
+  const scrollTo = useCallback((sectionId: string) => {
+    const projectsSection = document.getElementById(sectionId);
     if (projectsSection) {
       projectsSection.scrollIntoView({ behavior: 'smooth' });
     }
   }, []);
+
+
+  const time = useTime();
+  const rotate = useTransform(time, [0, 1500], [0, 360], {
+    clamp: false,
+  });
+  const rotatingBg = useTransform(rotate, (r) => {
+    return `conic-gradient(from ${r}deg, #ff4545, #00ff99, #006aff, #ff0095, #ff4545)`;
+  });
+
+  const [isHovering, setIsHovering] = useState(false);
 
   return (
     <div className="py-12 md:py-14 lg:py-20 relative z-0 overflow-x-clip mt-8" id="hero">
@@ -78,16 +90,47 @@ export const HeroSection = () => {
         </div>
         <div className="flex flex-col md:flex-row justify-center items-center mt-8 gap-4">
           <button
-            onClick={scrollToProjects}
-            className="inline-flex items-center gap-2 border border-white/15 px-6 h-12 rounded-xl"
+            onClick={() => scrollTo("projects")}
+            className="inline-flex items-center gap-2 border border-white/15 px-6 h-12 rounded-xl hover:scale-110 transition duration-300"
           >
             <span className="font-semibold z-20">Explore my work</span>
             <ArrowDown className="size-4" />
           </button>
-          <button className="inline-flex items-center gap-2 border-white bg-white text-gray-900 h-12 px-6 rounded-xl z-20">
+          <button
+            onClick={() => scrollTo("contact")}
+            className="inline-flex items-center gap-2 border-white bg-white text-gray-900 h-12 px-6 rounded-xl z-20 hover:scale-110 transition duration-300"
+          >
             <span>👋🏻</span>
             <span className="font-semibold">Let's connect</span>
           </button>
+        </div>
+        <div className="flex justify-center mt-5">
+          <a href="/Zivko_Andrija_CV.pdf" download={"Zivko_Andrija_CV.pdf"}
+            id="cv"
+            onMouseEnter={() => setIsHovering(true)}
+            onMouseLeave={() => setIsHovering(false)}
+            className="relative inline-flex items-center gap-2 border-white bg-emerald-300 text-gray-900 h-12 px-6 rounded-xl z-20 hover:scale-110 transition duration-300"
+          >
+            {isHovering && (
+              <>
+                <motion.div
+                  className="absolute -inset-1 rounded-3xl"
+                  style={{ background: rotatingBg, filter: "blur(5px)" }}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 0.6 }}
+                  transition={{ duration: 0.5, ease: "easeInOut" }}
+                />
+                <motion.div
+                  className="absolute -inset-1 rounded-3xl"
+                  style={{ background: rotatingBg, filter: "blur(5px)" }}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 0.6 }}
+                  transition={{ duration: 0.5, ease: "easeInOut" }}
+                />
+              </>
+            )}
+            <span className="font-semibold">Download CV</span>
+          </a>
         </div>
       </div>
     </div >

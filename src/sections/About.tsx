@@ -95,7 +95,7 @@ const hobbies = [
     left: "75%",
     top: "70%"
   },
-  
+
 ]
 
 export const AboutSection = () => {
@@ -104,16 +104,16 @@ export const AboutSection = () => {
       <div className="container">
         <SectionHeader eyebrow="About me" title="A Glimpse Into My world" description="Learn more about who I am, what I do, and what inspires me." />
         <div className="mt-20 flex flex-col gap-8">
-            <Card className="sm:h-[300px] lg:h-[225px] p-0 md:col-span-3 lg:col-span-2">
-              <CardHeader title="My Toolbox" description="Explore the technologies and tools I use to craft exceptional digital experiences." className="" />
-              <ToolboxItems items={toolboxItems} itemsWrapperClassName="sm:animate-move-left-fast md:animate-move-left" />
-            </Card>
+          <Card className="sm:h-[300px] lg:h-[225px] p-0 md:col-span-3 lg:col-span-2">
+            <CardHeader title="My Toolbox" description="Explore the technologies and tools I use to craft exceptional digital experiences." className="" />
+            <ToolboxItems items={toolboxItems} itemsWrapperClassName="sm:animate-move-left-fast md:animate-move-left" />
+          </Card>
           <div className="grid grid-cols-1 md:grid-cols-5 lg:grid-cols-3 gap-8">
             <Card className="h-[320px] p-0 flex flex-col md:col-span-3 lg:col-span-2">
               <CardHeader title="Beyond the Code" description="Explore my interests and hobbies beyond the digital realm." className="px-6 py-6" />
               <div className="relative flex-1">
                 {hobbies.map(hobby => (
-                  <div key={hobby.title} className="inline-flex items-center gap-2 px-6 bg-gradient-to-r from-emerald-300 to-sky-400 rounded-full py-1.5 absolute " style={
+                  <div key={hobby.title} className="inline-flex items-center gap-2 px-6 bg-gradient-to-r from-emerald-300 to-sky-400 rounded-full py-1.5 absolute hover:-rotate-6 transition duration-100" style={
                     {
                       left: hobby.left,
                       top: hobby.top
@@ -126,7 +126,9 @@ export const AboutSection = () => {
               </div>
             </Card>
             <Card className="h-[320px] p-0 relative md:col-span-2 lg:col-span-1">
-              <Image src={mapImage} alt="map" className="h-full w-full object-cover" />
+              <a href="https://www.google.com/maps/place/Zagreb/@45.8427747,15.964364,37924m/data=!3m2!1e3!4b1!4m6!3m5!1s0x4765d692c902cc39:0x3a45249628fbc28a!8m2!3d45.8150108!4d15.9819189!16zL20vMGZoenk?entry=ttu&g_ep=EgoyMDI1MDIxOC4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+                <Image src={mapImage} alt="map" className="h-full w-full object-cover hover:scale-110 transition duration-300" />
+              </a>
             </Card>
           </div>
         </div>
