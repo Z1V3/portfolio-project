@@ -34,10 +34,10 @@ export const ContactSection = () => {
             <div className="relative flex flex-col md:flex-row gap-8 md:gap-16 items-center z-10">
               <div>
                 <h2 className="font-serif text-2xl md:text-3xl">
-                  Let's create something amazing together
+                  Lets create something amazing together
                 </h2>
                 <p className="text-sm md:text-base mt-2">
-                  Ready to bring your next project to life? Let's connect and
+                  Ready to bring your next project to life? Lets connect and
                   discuss how I can help you achieve your goals.
                 </p>
               </div>
