@@ -100,7 +100,7 @@ const hobbies = [
 
 export const AboutSection = () => {
   return (
-    <div className="py-20 lg:py-28" id="about">
+    <div className="py-20 lg:py-28 border" id="about">
       <div className="container">
         <SectionHeader eyebrow="About me" title="A Glimpse Into My world" description="Learn more about who I am, what I do, and what inspires me." />
         <div className="mt-20 flex flex-col gap-8">

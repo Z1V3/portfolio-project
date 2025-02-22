@@ -98,7 +98,7 @@ export const HeroSection = () => {
           </button>
           <button
             onClick={() => scrollTo("contact")}
-            className="inline-flex items-center gap-2 border-white bg-white text-gray-900 h-12 px-6 rounded-xl z-20 hover:scale-110 transition duration-300"
+            className="inline-flex items-center gap-2 border-white bg-white text-gray-900 h-12 px-6 rounded-xl z-20 hover:scale-110 transition duration-300 sm:hidden md:block"
           >
             <span>👋🏻</span>
             <span className="font-semibold">Let's connect</span>
