@@ -100,9 +100,13 @@ const hobbies = [
 
 export const AboutSection = () => {
   return (
-    <div className="py-20 lg:py-28 border" id="about">
+    <div className="py-20 lg:py-28" id="about">
       <div className="container">
-        <SectionHeader eyebrow="About me" title="A Glimpse Into My world" description="Learn more about who I am, what I do, and what inspires me." />
+        <SectionHeader eyebrow="About me" title="Skills and interests" description="Learn more about who I am, what I do, and what inspires me." />
+        <p className="text-center md:text-lg lg:text-xl text-white/60 mt-12 max-w-2xl mx-auto">"My name is Andrija. I live in beautiful Croatia and am very passionate about everything I do. I would describe myself as a very unique character that always loves to help everyone around me and I consider myself a very loyal open-minded person. I cannot wait to start working with you and give my best as I always do."</p>
+        <p className="text-right md:text-lg lg:text-xl text-white/60 mt-2 max-w-xl mx-auto">
+          By me.
+        </p>
         <div className="mt-20 flex flex-col gap-8">
           <Card className="sm:h-[300px] lg:h-[225px] p-0 md:col-span-3 lg:col-span-2">
             <CardHeader title="My Toolbox" description="Explore the technologies and tools I use to craft exceptional digital experiences." className="" />
@@ -113,7 +117,7 @@ export const AboutSection = () => {
               <CardHeader title="Beyond the Code" description="Explore my interests and hobbies beyond the digital realm." className="px-6 py-6" />
               <div className="relative flex-1">
                 {hobbies.map(hobby => (
-                  <div key={hobby.title} className="inline-flex items-center gap-2 px-6 bg-gradient-to-r from-emerald-300 to-sky-400 rounded-full py-1.5 absolute hover:-rotate-6 transition duration-100" style={
+                  <div key={hobby.title} className="inline-flex items-center gap-2 px-6 bg-gradient-to-r from-indigo-300 to-blue-400 rounded-full py-1.5 absolute hover:-rotate-6 transition duration-100" style={
                     {
                       left: hobby.left,
                       top: hobby.top

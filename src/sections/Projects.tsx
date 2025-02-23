@@ -6,6 +6,7 @@ import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
 import Image from "next/image";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Card } from "@/components/Card";
+import { link } from "fs";
 
 
 const portfolioProjects = [
@@ -14,11 +15,12 @@ const portfolioProjects = [
     year: "2025",
     title: "Portfolio project",
     results: [
-      { title: "1" },
-      { title: "2" },
-      { title: "3" },
+      { title: "Personal portfolio" },
+      { title: "NextJS + TailwindCSS" },
+      { title: "Deployed on Github pages" },
     ],
-    link: "https://github.com/Z1V3/portfolio-project",
+    linkRepo: "https://github.com/Z1V3/portfolio-project",
+    linkLive: "",
     image: darkSaasLandingPage,
   },
   {
@@ -26,11 +28,12 @@ const portfolioProjects = [
     year: "2024",
     title: "Simple Blog",
     results: [
-      { title: "1" },
-      { title: "2" },
-      { title: "3" },
+      { title: "Blog project for hiring assignment" },
+      { title: "ASP.NET MVC" },
+      { title: "MySQL" },
     ],
-    link: "https://github.com/Z1V3/SimpleBlog",
+    linkRepo: "https://github.com/Z1V3/SimpleBlog",
+    linkLive: "",
     image: lightSaasLandingPage,
   },
   {
@@ -38,11 +41,13 @@ const portfolioProjects = [
     year: "2023",
     title: "EVCharge",
     results: [
-      { title: "1" },
-      { title: "2" },
-      { title: "3" },
+      { title: "Web app + Mobile app" },
+      { title: "Web: React + raw CSS" },
+      { title: "Mobile: Flutter" },
+      { title: "Backend: Docker (containerized MySQL/C#)" },
     ],
-    link: "https://github.com/Z1V3/EVCharge",
+    linkRepo: "https://github.com/Z1V3/EVCharge",
+    linkLive: "",
     image: aiStartupLandingPage,
   },
 ];
@@ -54,12 +59,12 @@ export const ProjectsSection = () => {
         <SectionHeader eyebrow="Real-World Results" title="Featured Projects" description="See how I transformed concepts into engaging digital experiences." />
         <div className="flex flex-col mt-10 md:mt-20 gap-20">
           {portfolioProjects.map((project, projectIndex) => (
-            <Card key={project.title} className="pt-8 px-8 pb-0 md:pt-12 md:px-10 lg:pt-16 lg:px-20 sticky hover:scale-110 transition duration-300 border-emerald-300 " style={{
+            <Card key={project.title} className="pt-8 px-8 pb-0 md:pt-12 md:px-10 lg:pt-16 lg:px-20 sticky hover:scale-110 transition duration-300 border-indigo-300 " style={{
               top: `calc(64px + ${projectIndex * 40}px`
             }}>
               <div className="lg:grid lg:grid-cols-2 lg:gap-16">
                 <div className="lg:pb-16">
-                  <div className="bg-gradient-to-r from-emerald-300 to-sky-300 inline-flex gap-2 font-bold uppercase tracking-widest text-sm text-transparent bg-clip-text">
+                  <div className="bg-gradient-to-r from-indigo-300 to-blue-300 inline-flex gap-2 font-bold uppercase tracking-widest text-sm text-transparent bg-clip-text">
                     <span>{project.company}</span>
                     <span>&bull;</span>
                     <span>{project.year}</span>
@@ -74,12 +79,20 @@ export const ProjectsSection = () => {
                       </li>
                     ))}
                   </ul>
-                  <a href={project.link} target="_blank">
-                    <button className="bg-white text-gray-950 h-12 w-full md:w-auto px-6 rounded-xl font-semibold inline-flex items-center justify-center gap-2 mt-8">
-                      <span>Visit Live Site</span>
-                      <ArrowUpRightIcon className="size-4" />
-                    </button>
-                  </a>
+                  <div className="flex gap-5">
+                    <a href={project.linkRepo} target="_blank">
+                      <button className="bg-white text-gray-950 h-12 w-full md:w-auto px-6 rounded-xl font-semibold inline-flex items-center justify-center gap-2 mt-8">
+                        <span>Github</span>
+                        <ArrowUpRightIcon className="size-4" />
+                      </button>
+                    </a>
+                    <a href={project.linkLive} target="_blank">
+                      <button className="bg-white text-gray-950 h-12 w-full md:w-auto px-6 rounded-xl font-semibold inline-flex items-center justify-center gap-2 mt-8">
+                        <span>Live site</span>
+                        <ArrowUpRightIcon className="size-4" />
+                      </button>
+                    </a>
+                  </div>
                 </div>
                 <div className="relative">
                   <Image src={project.image} alt={project.title} className="mt-8 lg:mt-0 lg:absolute lg:h-full lg:w-auto lg:max-w-none"></Image>

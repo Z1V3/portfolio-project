@@ -2,8 +2,8 @@
 
 import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
 import grainImage from "@/assets/images/grain.jpg";
-import { motion, useSpring, useTime, useTransform } from "framer-motion";
-import { useEffect, useState } from "react";
+import { motion, useTime, useTransform } from "framer-motion";
+import { useState } from "react";
 
 export const ContactSection = () => {
   const time = useTime();
@@ -24,7 +24,7 @@ export const ContactSection = () => {
     >
       <div className="container relative">
         <div className="relative">
-          <div className="bg-gradient-to-r from-emerald-300 to-sky-400 text-gray-900 py-8 px-10 rounded-3xl text-center md:text-left relative overflow-hidden z-10">
+          <div className="bg-gradient-to-r from-indigo-300 to-blue-400 text-gray-900 py-8 px-10 rounded-3xl text-center md:text-left relative overflow-hidden z-10">
             <div
               className="absolute inset-0 opacity-5 z-0"
               style={{
