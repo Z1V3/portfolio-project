@@ -74,21 +74,20 @@ export const Header = () => {
           onMouseEnter={() => setIsHovering(true)}
           onMouseLeave={() => setIsHovering(false)}
         >
-          <button
-            onClick={() => scrollTo("contact")}
+          <a
+            href="mailto:andrijazifko@gmail.com"
             className="nav-item-contact"
+            style={{ display: "inline-block" }}
           >
             Contact
             {isHovering && (
-              <>
-                <motion.div
-                  className="absolute -inset-1 rounded-3xl -z-30 mt-4"
-                  style={{ background: rotatingBg, filter: "" }}
-                  initial={{ opacity: 0.2 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.5, ease: "easeInOut" }}
-                />
-              </>
+              <motion.div
+                className="absolute -inset-1 rounded-3xl -z-30 mt-4"
+                style={{ background: rotatingBg, filter: "" }}
+                initial={{ opacity: 0.2 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5, ease: "easeInOut" }}
+              />
             )}
             {!isHovering && (
               <motion.div
@@ -99,7 +98,7 @@ export const Header = () => {
                 transition={{ duration: 0, ease: "linear" }}
               />
             )}
-          </button>
+          </a>
         </div>
       </nav>
     </div>

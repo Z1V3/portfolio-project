@@ -7,12 +7,22 @@ import Image from "next/image";
 import JavascriptIcon from "@/assets/icons/square-js.svg";
 import HTMLIcon from "@/assets/icons/html5.svg";
 import CssIcon from "@/assets/icons/css3.svg";
+import TailwindIcon from "@/assets/icons/tailwind.svg";
 import ReactIcon from "@/assets/icons/react.svg";
-import ChromeIcon from "@/assets/icons/chrome.svg";
-import GithubIcon from "@/assets/icons/github.svg";
+import GitIcon from "@/assets/icons/git.svg";
+import DotNetIcon from "@/assets/icons/dotnet.svg";
+import MySQLIcon from "@/assets/icons/mysql.svg";
+import NextJSIcon from "@/assets/icons/next.svg";
+import DockerIcon from "@/assets/icons/docker.svg";
+import AtlassianIcon from "@/assets/icons/atlassian.svg";
+import VirtualizationIcon from "@/assets/icons/vm.svg";
+import JavaIcon from "@/assets/icons/java.svg";
+import SecurityIcon from "@/assets/icons/security.svg";
 import mapImage from "@/assets/images/map.png";
 import { CardHeader } from "@/components/CardHeader";
 import { ToolboxItems } from "@/components/ToolboxItems";
+import { AnimatedCard } from "@/components/AnimatedCard";
+
 
 const toolboxItems = [
   {
@@ -28,16 +38,48 @@ const toolboxItems = [
     iconType: CssIcon,
   },
   {
+    title: "Tailwind CSS",
+    iconType: TailwindIcon,
+  },
+  {
     title: "React",
     iconType: ReactIcon,
   },
   {
-    title: "Chrome",
-    iconType: ChromeIcon,
+    title: "NextJS",
+    iconType: NextJSIcon,
   },
   {
-    title: "Github",
-    iconType: GithubIcon,
+    title: "Git",
+    iconType: GitIcon,
+  },
+  {
+    title: ".Net",
+    iconType: DotNetIcon,
+  },
+  {
+    title: "MySQL",
+    iconType: MySQLIcon,
+  },
+  {
+    title: "Docker",
+    iconType: DockerIcon,
+  },
+  {
+    title: "Java",
+    iconType: JavaIcon,
+  },
+  {
+    title: "Atlassian",
+    iconType: AtlassianIcon,
+  },
+  {
+    title: "Virtualization",
+    iconType: VirtualizationIcon,
+  },
+  {
+    title: "Cybersecurity",
+    iconType: SecurityIcon,
   }
 ]
 
@@ -122,10 +164,7 @@ export const AboutSection = () => {
           </p>
         </div>
         <div className="mt-20 flex flex-col gap-8">
-          <Card className="sm:h-[220px] lg:h-[200px] p-0 md:col-span-3 lg:col-span-2">
-            <CardHeader title="Skills" description="Explore the technologies and tools I use to craft exceptional digital experiences." className="" />
-            <ToolboxItems items={toolboxItems} itemsWrapperClassName="sm:animate-move-left-fast md:animate-move-left-fast" />
-          </Card>
+          <AnimatedCard toolboxItems={toolboxItems} />
           <div className="grid grid-cols-1 md:grid-cols-5 lg:grid-cols-3 gap-8">
             <Card className="h-[320px] p-0 flex flex-col md:col-span-3 lg:col-span-2">
               <CardHeader title="Interests" description="Explore my interests and hobbies beyond the digital realm." className="" />
