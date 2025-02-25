@@ -1,17 +1,28 @@
+'use client';
+import React from "react";
+import { SparklesCore } from "@/components/ui/sparkles";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Card } from "@/components/Card";
-import StarIcon from "@/assets/icons/star.svg";
-import bookImage from "@/assets/images/book-cover.png";
 import Image from "next/image";
 import JavascriptIcon from "@/assets/icons/square-js.svg";
 import HTMLIcon from "@/assets/icons/html5.svg";
 import CssIcon from "@/assets/icons/css3.svg";
+import TailwindIcon from "@/assets/icons/tailwind.svg";
 import ReactIcon from "@/assets/icons/react.svg";
-import ChromeIcon from "@/assets/icons/chrome.svg";
-import GithubIcon from "@/assets/icons/github.svg";
+import GitIcon from "@/assets/icons/git.svg";
+import DotNetIcon from "@/assets/icons/dotnet.svg";
+import MySQLIcon from "@/assets/icons/mysql.svg";
+import NextJSIcon from "@/assets/icons/next.svg";
+import DockerIcon from "@/assets/icons/docker.svg";
+import AtlassianIcon from "@/assets/icons/atlassian.svg";
+import VirtualizationIcon from "@/assets/icons/vm.svg";
+import JavaIcon from "@/assets/icons/java.svg";
+import SecurityIcon from "@/assets/icons/security.svg";
 import mapImage from "@/assets/images/map.png";
 import { CardHeader } from "@/components/CardHeader";
 import { ToolboxItems } from "@/components/ToolboxItems";
+import { AnimatedCard } from "@/components/AnimatedCard";
+
 
 const toolboxItems = [
   {
@@ -27,16 +38,48 @@ const toolboxItems = [
     iconType: CssIcon,
   },
   {
+    title: "Tailwind CSS",
+    iconType: TailwindIcon,
+  },
+  {
     title: "React",
     iconType: ReactIcon,
   },
   {
-    title: "Chrome",
-    iconType: ChromeIcon,
+    title: "NextJS",
+    iconType: NextJSIcon,
   },
   {
-    title: "Github",
-    iconType: GithubIcon,
+    title: "Git",
+    iconType: GitIcon,
+  },
+  {
+    title: ".Net",
+    iconType: DotNetIcon,
+  },
+  {
+    title: "MySQL",
+    iconType: MySQLIcon,
+  },
+  {
+    title: "Docker",
+    iconType: DockerIcon,
+  },
+  {
+    title: "Java",
+    iconType: JavaIcon,
+  },
+  {
+    title: "Atlassian",
+    iconType: AtlassianIcon,
+  },
+  {
+    title: "Virtualization",
+    iconType: VirtualizationIcon,
+  },
+  {
+    title: "Cybersecurity",
+    iconType: SecurityIcon,
   }
 ]
 
@@ -100,21 +143,31 @@ const hobbies = [
 
 export const AboutSection = () => {
   return (
-    <div className="py-20 lg:py-28" id="about">
-      <div className="container">
-        <SectionHeader eyebrow="About me" title="Skills and interests" description="Learn more about who I am, what I do, and what inspires me." />
-        <p className="text-center md:text-lg lg:text-xl text-white/60 mt-12 max-w-2xl mx-auto">"My name is Andrija. I live in beautiful Croatia and am very passionate about everything I do. I would describe myself as a very unique character that always loves to help everyone around me and I consider myself a very loyal open-minded person. I cannot wait to start working with you and give my best as I always do."</p>
-        <p className="text-right md:text-lg lg:text-xl text-white/60 mt-2 max-w-xl mx-auto">
-          By me.
-        </p>
+    <div className="py-20 lg:py-28 relative" id="about">
+      <div className="container relative">
+        <div className="absolute w-full h-[400px] [mask-image:radial-gradient(60%_100%_at_bottom_center,black,transparent)]">
+          <SparklesCore
+            id="tsparticlesfullpage"
+            background="transparent"
+            minSize={0.6}
+            maxSize={1.4}
+            particleDensity={100}
+            className="w-full h-full -z-5"
+            particleColor="#FFFFFF"
+          />
+        </div>
+        <div className="relative z-5">
+          <SectionHeader eyebrow="About me" title="Skills and interests" description="Learn more about who I am, what I do, and what inspires me." />
+          <p className="text-center md:text-lg lg:text-xl text-white/60 mt-12 max-w-2xl mx-auto">"My name is Andrija. I live in beautiful Croatia and am very passionate about everything I do. I would describe myself as a very unique character that always loves to help everyone around me and I consider myself a very loyal open-minded person. I cannot wait to start working with you and give my best as I always do."</p>
+          <p className="text-right md:text-lg lg:text-xl text-white/60 mt-2 max-w-xl mx-auto">
+            By me.
+          </p>
+        </div>
         <div className="mt-20 flex flex-col gap-8">
-          <Card className="sm:h-[300px] lg:h-[225px] p-0 md:col-span-3 lg:col-span-2">
-            <CardHeader title="My Toolbox" description="Explore the technologies and tools I use to craft exceptional digital experiences." className="" />
-            <ToolboxItems items={toolboxItems} itemsWrapperClassName="sm:animate-move-left-fast md:animate-move-left" />
-          </Card>
+          <AnimatedCard toolboxItems={toolboxItems} />
           <div className="grid grid-cols-1 md:grid-cols-5 lg:grid-cols-3 gap-8">
             <Card className="h-[320px] p-0 flex flex-col md:col-span-3 lg:col-span-2">
-              <CardHeader title="Beyond the Code" description="Explore my interests and hobbies beyond the digital realm." className="px-6 py-6" />
+              <CardHeader title="Interests" description="Explore my interests and hobbies beyond the digital realm." className="" />
               <div className="relative flex-1">
                 {hobbies.map(hobby => (
                   <div key={hobby.title} className="inline-flex items-center gap-2 px-6 bg-gradient-to-r from-indigo-300 to-blue-400 rounded-full py-1.5 absolute hover:-rotate-6 transition duration-100" style={

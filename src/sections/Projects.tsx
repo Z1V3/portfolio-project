@@ -88,7 +88,8 @@ export const ProjectsSection = () => {
                     </a>
                     <a href={project.linkLive} target="_blank">
                       <button className="bg-white text-gray-950 h-12 w-full md:w-auto px-6 rounded-xl font-semibold inline-flex items-center justify-center gap-2 mt-8">
-                        <span>Live site</span>
+                        <span className="sm:hidden md:block">Live site</span>
+                        <span className="md:hidden">Live</span>
                         <ArrowUpRightIcon className="size-4" />
                       </button>
                     </a>

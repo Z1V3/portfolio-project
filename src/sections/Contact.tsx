@@ -11,7 +11,7 @@ export const ContactSection = () => {
     clamp: false,
   });
   const rotatingBg = useTransform(rotate, (r) => {
-    return `conic-gradient(from ${r}deg, #ff4545, #00ff99, #006aff, #ff0095, #ff4545)`;
+    return `conic-gradient(from ${r}deg, #a5b4fc, #f9b4fc)`;
   });
 
   const [isHovering, setIsHovering] = useState(false);
@@ -34,11 +34,10 @@ export const ContactSection = () => {
             <div className="relative flex flex-col md:flex-row gap-8 md:gap-16 items-center z-10">
               <div>
                 <h2 className="font-serif text-2xl md:text-3xl">
-                  Lets create something amazing together
+                  Send me a message and lets get to work
                 </h2>
                 <p className="text-sm md:text-base mt-2">
-                  Ready to bring your next project to life? Lets connect and
-                  discuss how I can help you achieve your goals.
+                  You have something in mind and want it to come to realisation? I am here to do exactly that. Expect me to get back to you as fast as possible.
                 </p>
               </div>
               <div>
@@ -56,14 +55,14 @@ export const ContactSection = () => {
             <>
               <motion.div
                 className="absolute -inset-1 rounded-3xl"
-                style={{ background: rotatingBg, filter: "blur(10px)" }}
+                style={{ background: rotatingBg, filter: "blur(1px)" }}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5, ease: "easeInOut" }}
               />
               <motion.div
                 className="absolute -inset-1 rounded-3xl"
-                style={{ background: rotatingBg, filter: "blur(10px)" }}
+                style={{ background: rotatingBg, filter: "blur(15px)" }}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5, ease: "easeInOut" }}

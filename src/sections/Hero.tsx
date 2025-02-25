@@ -1,7 +1,5 @@
 'use client';
 
-import profilePicture from "@/assets/images/profpic.png";
-import Image from "next/image";
 import ArrowDown from "@/assets/icons/arrow-down.svg";
 import grainImage from "@/assets/images/grain.jpg";
 import StarIcon from "@/assets/icons/star.svg";
@@ -9,6 +7,7 @@ import SparkleIcon from "@/assets/icons/sparkle.svg";
 import { HeroOrbit } from "@/components/HeroOrbit";
 import { useCallback, useState } from "react";
 import { motion, useTime, useTransform } from "framer-motion";
+import { TextGenerateEffect } from "@/components/ui/textGenerateEffect";
 
 
 export const Heredction = () => {
@@ -86,12 +85,17 @@ export const Heredction = () => {
         <div className="flex flex-col items-center">
         </div>
         <div className="max-w-lg mx-auto md:pt-80 sm:pt-16">
-          <h1 className="font-serif text-3xl md:text-7xl text-center mt-8 sm:mt-20 tracking-wide">
-            Hello, <br className="mb-3" /> My name is Andrija
-          </h1>
-          <p className="mt-4 text-center text-white/60 md:text-lg">
-            I specialize in software developing and engineering. <br className="" /> In short terms, making anything possible.
-          </p>
+          <div className="sm:mt-20 sm:mx-4">
+            <div className="sm:mx-10">
+              <TextGenerateEffect duration={1} filter={false} words={"Hello, "} />
+              <div className="sm:pt-2 md:pt-6">
+                <TextGenerateEffect duration={1} filter={false} words={"My name is Andrija"} />
+              </div>
+            </div>
+            <p className="mt-4 text-center text-white/60 md:text-lg">
+              I specialize in software developing and engineering. <br className="sm:hidden md:block" /> In short terms, making anything possible.
+            </p>
+          </div>
         </div>
         <div className="flex flex-col md:flex-row justify-center items-center mt-8 gap-4">
           <button
@@ -100,13 +104,6 @@ export const Heredction = () => {
           >
             <span className="font-semibold z-20">Explore my work</span>
             <ArrowDown className="size-4" />
-          </button>
-          <button
-            onClick={() => scrollTo("contact")}
-            className="inline-flex items-center gap-2 border-white bg-white text-gray-900 h-12 px-6 rounded-xl z-20 hover:scale-110 transition duration-300 sm:hidden md:block"
-          >
-            <span>👋🏻</span>
-            <span className="font-semibold">Lets connect</span>
           </button>
         </div>
         <div className="flex justify-center mt-5">
