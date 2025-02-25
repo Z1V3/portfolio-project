@@ -84,11 +84,20 @@ export const Header = () => {
                 <motion.div
                   className="absolute -inset-1 rounded-3xl -z-30 mt-4"
                   style={{ background: rotatingBg, filter: "" }}
-                  initial={{ opacity: 0 }}
+                  initial={{ opacity: 0.2 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.5, ease: "easeInOut" }}
                 />
               </>
+            )}
+            {!isHovering && (
+              <motion.div
+                className="absolute -inset-1 rounded-3xl -z-30 mt-4"
+                style={{ background: "conic-gradient(from 0deg, #a5b4fc, #f9b4fc)", filter: "" }}
+                initial={{ opacity: 0.2 }}
+                animate={{ opacity: 0.2 }}
+                transition={{ duration: 0, ease: "linear" }}
+              />
             )}
           </button>
         </div>
