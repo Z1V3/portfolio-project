@@ -158,7 +158,7 @@ export const AboutSection = () => {
         </div>
         <div className="relative z-5">
           <SectionHeader eyebrow="About me" title="Skills and interests" description="Learn more about who I am, what I do, and what inspires me." />
-          <p className="text-center md:text-lg lg:text-xl text-white/60 mt-12 max-w-2xl mx-auto">"My name is Andrija. I live in beautiful Croatia and am very passionate about everything I do. I would describe myself as a very unique character that always loves to help everyone around me and I consider myself a very loyal open-minded person. I cannot wait to start working with you and give my best as I always do."</p>
+          <p className="text-center md:text-lg lg:text-xl text-white/60 mt-12 max-w-2xl mx-auto">My name is Andrija. I live in beautiful Croatia and am very passionate about everything I do. I would describe myself as a very unique character that always loves to help everyone around me and I consider myself a very loyal open-minded person. I cannot wait to start working with you and give my best as I always do.</p>
           <p className="text-right md:text-lg lg:text-xl text-white/60 mt-2 max-w-xl mx-auto">
             By me.
           </p>
