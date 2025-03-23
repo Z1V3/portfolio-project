@@ -1,6 +1,7 @@
 import darkSaasLandingPage from "@/assets/images/dark-saas-landing-page.png";
 import lightSaasLandingPage from "@/assets/images/light-saas-landing-page.png";
 import aiStartupLandingPage from "@/assets/images/ai-startup-landing-page.png";
+import webshopProjectImage from "@/assets/images/webshop-project.png";
 import CheckCircleIcon from "@/assets/icons/check-circle.svg";
 import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
 import Image from "next/image";
@@ -20,8 +21,22 @@ const portfolioProjects = [
       { title: "Deployed on Github pages" },
     ],
     linkRepo: "https://github.com/Z1V3/portfolio-project",
-    linkLive: "",
+    linkLive: "https://z1v3.github.io/portfolio-project/",
     image: darkSaasLandingPage,
+  },
+  {
+    company: "Personal",
+    year: "2025",
+    title: "Webshop project",
+    results: [
+      { title: "Art Webshop" },
+      { title: "Frontend: NextJS + TailwindCSS" },
+      { title: "Backend: .NET API project (C#)" },
+      { title: "To be deployed on Vercel/Azure" },
+    ],
+    linkRepo: "https://github.com/Z1V3/webshop-project",
+    linkLive: "",
+    image: webshopProjectImage,
   },
   {
     company: "Hiring Assignment",
@@ -44,7 +59,7 @@ const portfolioProjects = [
       { title: "Web app + Mobile app" },
       { title: "Web: React + raw CSS" },
       { title: "Mobile: Flutter" },
-      { title: "Backend: Docker (containerized MySQL/C#)" },
+      { title: "Backend: Docker (containerized MySQL/.NET(C#))" },
     ],
     linkRepo: "https://github.com/Z1V3/EVCharge",
     linkLive: "",

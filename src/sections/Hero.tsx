@@ -107,7 +107,7 @@ export const Heredction = () => {
           </button>
         </div>
         <div className="flex justify-center mt-5">
-          <a href="/Zivko_Andrija_CV.pdf" download={"Zivko_Andrija_CV.pdf"}
+          <a href="./Zivko_Andrija_CV.pdf" download={"Zivko_Andrija_CV.pdf"}
             id="cv"
             onMouseEnter={() => setIsHovering(true)}
             onMouseLeave={() => setIsHovering(false)}
