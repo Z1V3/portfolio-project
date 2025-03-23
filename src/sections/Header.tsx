@@ -24,7 +24,7 @@ export const Header = () => {
         });
       },
       {
-        threshold: 0.6, // Adjust this for more or less sensitivity
+        threshold: 0.3, // Adjust this for more or less sensitivity
       }
     );
 
